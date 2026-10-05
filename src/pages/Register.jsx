@@ -1,12 +1,13 @@
 import { useState } from "react"
 import { Link ,useNavigate} from "react-router-dom";
 
-import { createUser } from "../services/userService";
+import { createUser, getUserByEmail } from "../services/userService";
 
 
-function Register() {
+function  Register() {
 
     const navigate =useNavigate();
+   
 
     const [apiError, setApiError] = useState("")
 
@@ -52,10 +53,17 @@ function Register() {
     }
 
     const handleRegister = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        setApiError("");
+        
         if (!validate()) {
             return;
         };
+        const existingUser =await getUserByEmail(email);
+        if(existingUser){
+            setApiError("Email Already Registered");
+            return
+        }
         try {
             await createUser(user);
             console.log(user);
