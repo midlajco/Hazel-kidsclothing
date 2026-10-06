@@ -7,7 +7,98 @@
       "id": "EVKQLjtYn0o"
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "id": "p1",
+      "name": "Soft Cotton Romper",
+      "category": "babies",
+      "price": 1290,
+      "description": "Soft cotton romper made for everyday comfort.",
+      "image": "public/images/jisn.png",
+      "stock": 12
+    },
+    {
+      "id": "p2",
+      "name": "Everyday Baby Set",
+      "category": "babies",
+      "price": 1590,
+      "description": "Comfortable two-piece set for little ones.",
+      "image": "public/images/munawir.jpeg",
+      "stock": 8
+    },
+    {
+      "id": "p3",
+      "name": "Classic Cotton Dress",
+      "category": "girls",
+      "price": 2190,
+      "description": "Simple cotton dress for everyday wear.",
+      "image": "public/images/shahanan.jpeg",
+      "stock": 10
+    },
+    {
+      "id": "p4",
+      "name": "Linen Summer Dress",
+      "category": "girls",
+      "price": 2490,
+      "description": "Lightweight linen dress with a comfortable fit.",
+      "image": "public/images/siarj.jpeg",
+      "stock": 6
+    },
+    {
+      "id": "p5",
+      "name": "Relaxed Cotton Shirt",
+      "category": "boys",
+      "price": 1890,
+      "description": "Relaxed cotton shirt for everyday adventures.",
+      "image": "public/images/WhatsApp Image 2026-10-06 at 2.48.28 PM.jpeg",
+      "stock": 7
+    },
+    {
+      "id": "p6",
+      "name": "Everyday Shorts",
+      "category": "boys",
+      "price": 1290,
+      "description": "Lightweight shorts designed for everyday play.",
+      "image": "public/images/WhatsApp Image 2026-10-06 at 2.48.29 PM.jpeg",
+      "stock": 14
+    },
+    {
+      "id": "p7",
+      "name": "Little Cloud Bodysuit",
+      "category": "babies",
+      "price": 990,
+      "description": "Soft and gentle bodysuit for everyday comfort.",
+      "image": "public/images/WhatsApp Image 2026-10-06 at 2.48.39 PM.jpeg",
+      "stock": 15
+    },
+    {
+      "id": "p8",
+      "name": "Weekend Play Set",
+      "category": "boys",
+      "price": 2290,
+      "description": "Comfortable matching set for relaxed weekends.",
+      "image": "/images/products/play-set.jpg",
+      "stock": 5
+    },
+    {
+      "id": "p9",
+      "name": "Petal Cotton Top",
+      "category": "girls",
+      "price": 1490,
+      "description": "Soft cotton top with a simple everyday design.",
+      "image": "/images/products/cotton-top.jpg",
+      "stock": 11
+    },
+    {
+      "id": "p10",
+      "name": "Fine Knit Cardigan",
+      "category": "babies",
+      "price": 1790,
+      "description": "Lightweight knitted cardigan for cooler days.",
+      "image": "/images/products/cardigan.jpg",
+      "stock": 9
+    }
+  ],
   "orders": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

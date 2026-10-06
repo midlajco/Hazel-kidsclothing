@@ -3,6 +3,8 @@ import { BrowserRouter,Routes,Route } from "react-router-dom"
 import Home from "./pages/Home"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
+import Shop from "./pages/Shop"
+
 import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { login } from "./redux/authSlice"
@@ -28,6 +30,8 @@ function App() {
       <Route  path="/" element ={<Home/>}  />
       <Route  path="/register" element ={<Register/>}  />
       <Route  path="/login" element ={<Login/>}  />
+      <Route  path="/shop" element ={<Shop/>}  />
+      
      </Routes>
     </BrowserRouter>
   )
