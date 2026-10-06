@@ -6,6 +6,7 @@ function Shop() {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [category, setCategory] = useState("all");
+    const [sort,setSort] =useState("low");
 
 
 
@@ -32,6 +33,18 @@ function Shop() {
              
             return searchMatches && catagoryMatches
     });
+  const sortedProducts = [...filteredProducts].sort((a,b)=>{
+    if(sort==="low"){
+        return a.price-b.price}
+    else{
+        return b.price -a.price  }  
+})
+   
+
+  
+ 
+  
+     
     
     return (
         <div className="min-h-screen bg-pink-50 px-6 py-10">
@@ -50,13 +63,17 @@ function Shop() {
                     <option value="boys">Boys</option>
                     <option value="girls">Girls</option>
                 </select>
+                <select  onChange={(e)=>setSort(e.target.value)} value={sort} >
+                    <option value="low">Low to High</option>
+                    <option value="High">High to Low </option>
+                </select>
 
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {filteredProducts.length === 0 ? (
                     <p>No Products Found</p>
                 ) :
-                    (filteredProducts.map((product) => (
+                    (sortedProducts.map((product) => (
                         <div
                             key={product.id}
                             className="rounded-xl bg-white p-4 shadow-sm"
