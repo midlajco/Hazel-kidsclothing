@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function Shop() {
 
-    // const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
 
 
@@ -23,23 +23,23 @@ function Shop() {
         return <p>No products found.</p>;
     }
     
-    // const filteredProducts = products?.filter((product) =>
-    //     product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    // );
+    const filteredProducts = products?.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     return (
         <div className="min-h-screen bg-pink-50 px-6 py-10">
             <h1 className="mb-8 text-3xl font-bold text-gray-800">
                 Shop
             </h1>
-            {/* <div >
+            <div >
                 <input type="text"
                     onChange={(e) => setSearchTerm( e.target.value)}
                     value={searchTerm}
                     className="border " />
 
-            </div> */}
+            </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {products.map((product) => (
+                {filteredProducts.map((product) => (
                     <div
                         key={product.id}
                         className="rounded-xl bg-white p-4 shadow-sm"
