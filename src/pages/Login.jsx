@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { getUserByEmail } from "../services/userService";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/authSlice";
 
 function Login() {
 
+    const dispatch =useDispatch();
+    const navigate =useNavigate();
      const [apiError, setApiError] = useState("")
 
     const [email, setEmail] = useState("");
@@ -48,6 +52,10 @@ function Login() {
                 setApiError("password doesnt match")
                 return
             }
+            dispatch(login(user));
+            localStorage.setItem("user",JSON.stringify(user))
+            navigate("/")
+            
 
             
 

@@ -1,40 +1,10 @@
 {
   "users": [
     {
-      "name": "midu",
-      "email": "midu@gmail.com",
-      "password": "123123",
-      "id": "AL4eGs7qsDQ"
-    },
-    {
-      "name": "midu",
-      "email": "midu@gmail.com",
-      "password": "123123",
-      "id": "mizzZJkquUA"
-    },
-    {
-      "name": "haha",
-      "email": "haha@gmail.com",
-      "password": "hahaha",
-      "id": "o806C_k1EDU"
-    },
-    {
-      "name": "hahaha",
-      "email": "haha@gmail.com",
-      "password": "123123",
-      "id": "qzSB40Pu_dw"
-    },
-    {
-      "name": "haha",
-      "email": "haha@gmail.com",
-      "password": "151515",
-      "id": "wViEKijLlQM"
-    },
-    {
-      "name": "sss",
-      "email": "haha@gmail.com",
-      "password": "123123",
-      "id": "5eNASJaSbdc"
+      "name": "mijo",
+      "email": "mijo@g.com",
+      "password": "mijomijo",
+      "id": "EVKQLjtYn0o"
     }
   ],
   "products": [],
