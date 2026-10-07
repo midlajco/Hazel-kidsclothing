@@ -8,6 +8,7 @@ import Shop from "./pages/Shop"
 import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { login } from "./redux/authSlice"
+import ProductPage from "./pages/ProductPage"
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
       <Route  path="/register" element ={<Register/>}  />
       <Route  path="/login" element ={<Login/>}  />
       <Route  path="/shop" element ={<Shop/>}  />
+      <Route  path="/product/:id" element ={<ProductPage/>}  />
       
      </Routes>
     </BrowserRouter>
