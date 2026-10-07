@@ -7,7 +7,7 @@ export const getProducts =async ()=>{
     return response.data
 }
 export const getProductById =async(id)=>{
-    const response =await  axios.get(`${URL}?id=${id}`);
+    const response =await  axios.get(`${URL}/${id}`);
     
-    return response.data[0]
+    return response.data
 }

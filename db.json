@@ -59,7 +59,7 @@
       "category": "boys",
       "price": 1290,
       "description": "Lightweight shorts designed for everyday play.",
-      "image": "public/images/WhatsApp Image 2026-10-06 at 2.48.29 PM.jpeg",
+      "image": "/images/WhatsApp Image 2026-10-06 at 2.48.29 PM.jpeg",
       "stock": 14
     },
     {
@@ -68,7 +68,7 @@
       "category": "babies",
       "price": 990,
       "description": "Soft and gentle bodysuit for everyday comfort.",
-      "image": "public/images/WhatsApp Image 2026-10-06 at 2.48.39 PM.jpeg",
+      "image": "/images/WhatsApp Image 2026-10-06 at 2.48.39 PM.jpeg",
       "stock": 15
     },
     {
