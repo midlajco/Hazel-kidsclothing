@@ -5,6 +5,12 @@
       "email": "mijo@g.com",
       "password": "mijomijo",
       "id": "EVKQLjtYn0o"
+    },
+    {
+      "name": "mijo",
+      "email": "j@g.com",
+      "password": "mijomijo",
+      "id": "xx"
     }
   ],
   "products": [
@@ -97,6 +103,13 @@
       "description": "Lightweight knitted cardigan for cooler days.",
       "image": "/images/products/cardigan.jpg",
       "stock": 9
+    }
+  ],
+  "cart": [
+    {
+      "userId": "xx",
+      "items": [],
+      "id": "-VaM4A1xhF8"
     }
   ],
   "orders": [],

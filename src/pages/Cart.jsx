@@ -1,44 +1,140 @@
-import { removeFromCart, increaseQ, decreaseQ,clearCart} from '../redux/cartSlice';
-import { useDispatch, useSelector } from 'react-redux'
+
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import {
+    useMutation,
+    useQuery,
+    useQueryClient
+} from '@tanstack/react-query';
+import { getCartByUser, updatedCart } from '../services/cartService';
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
-    const dispatch = useDispatch()
-    const cartItems = useSelector((state) => state.cart.items);
-    const total=cartItems.reduce((sum,product)=>sum+product.price*product.quantity,0);
-    
-    
+    const navigate = useNavigate();
+    const queryClient = useQueryClient();
+
+    const user = useSelector(
+        (state) => state.authentication.user
+    );
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+
+        if (!user && !storedUser) {
+            navigate("/login");
+        }
+    }, [user, navigate]);
+
+    const {
+        data: cart,
+        isLoading,
+        isError
+    } = useQuery({
+        queryKey: ["cart", user?.id],
+        queryFn: () => getCartByUser(user.id),
+        enabled: !!user?.id
+    });
+
+    const cartMutation = useMutation({
+        mutationFn: ({ id, items }) => updatedCart(id, items),
+
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: ["cart", user.id]
+            });
+        }
+    });
+
+    if (!user) return null;
+
+    if (isLoading) return <p>Loading cart...</p>;
+
+    if (isError) return <p>Failed to load cart.</p>;
+
+    const handleQ = (id, change) => {
+        const updatediItems = cart.items.map((item) =>
+            item.productId === id
+                ? {
+                    ...item,
+                    quantity: item.quantity + change
+                }
+                : item
+        );
+
+        cartMutation.mutate({
+            id: cart.id,
+            items: updatediItems
+        });
+    };
+
+    const handleRemove = (id) => {
+        const updatediItems = cart.items.filter(
+            (item) => item.productId !== id
+        );
+
+        cartMutation.mutate({
+            id: cart.id,
+            items: updatediItems
+        });
+    };
+
+    const handleEmptyCart = () => {
+        cartMutation.mutate({
+            id: cart.id,
+            items: []
+        });
+    };
+
+    const totalPrice = cart?.items.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+    );
 
     return (
         <div>
-            <h1>Cart</h1>
-            {
-                cartItems.map((product) => (
-                    <div key={product.productId}>
-                        <h3>{product.name}</h3>
-                        <img src={product.image} alt={product.name} />
-                        <p>{product.price * product.quantity}</p>
-                        <p>{product.description}</p>
+            {cart?.items.length === 0 && (
+                <p>Your cart is empty.</p>
+            )}
 
-                        <button onClick={() => dispatch(increaseQ(product.productId))} >+</button>
+            {cart?.items.map((item) => (
+                <div key={item.productId}>
+                    <img
+                        src={item.image}
+                        alt={item.name}
+                        width="100"
+                    />
 
-                        <p>{product.quantity}</p>
-                        {
-                            product.quantity >1 && (
-                                <button onClick={()=>dispatch(decreaseQ(product.productId))} >-</button>
-                                
-                            )  }
-                        
-                        <button onClick={() => dispatch(removeFromCart(product.productId))} >Remove</button>
-                    </div>
-                ))
-            }
-            <p>{total}</p>
-            <button onClick={()=>dispatch(clearCart())} >Empty Cart</button>
-            
+                    <h1>{item.name}</h1>
+                    <h1>{item.price}</h1>
+                    <h1>{item.quantity}</h1>
 
+                    <button
+                        onClick={() => handleQ(item.productId, 1)}
+                    >
+                        +
+                    </button>
+
+                    <button
+                        onClick={() => handleQ(item.productId, -1)}
+                    >
+                        -
+                    </button>
+
+                    <button
+                        onClick={() => handleRemove(item.productId)}
+                    >
+                        remove from cart
+                    </button>
+                </div>
+            ))}
+
+            <h1>TOTAl ={totalPrice}</h1>
+
+            <button onClick={() => handleEmptyCart()}>
+                Empty Cart
+            </button>
         </div>
-    )
+    );
 }
 
-export default Cart
-
+export default Cart;

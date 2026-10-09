@@ -17,14 +17,35 @@ function Shop() {
         queryKey: ["products"],
         queryFn: getProducts,
     });
+
     if (isLoading) {
-        return <p>Loading...products</p>
+        return (
+            <div className="flex min-h-screen items-center justify-center bg-white text-black">
+                <p className="text-sm uppercase tracking-[0.25em]">
+                    Loading...products
+                </p>
+            </div>
+        )
     }
+
     if (isError) {
-        return <p>Failed to losd Products</p>
+        return (
+            <div className="flex min-h-screen items-center justify-center bg-white text-black">
+                <p className="text-sm uppercase tracking-[0.25em]">
+                    Failed to losd Products
+                </p>
+            </div>
+        )
     }
+
     if (!products || products.length === 0) {
-        return <p>No products found.</p>;
+        return (
+            <div className="flex min-h-screen items-center justify-center bg-white text-black">
+                <p className="text-sm uppercase tracking-[0.25em]">
+                    No products found.
+                </p>
+            </div>
+        );
     }
 
     const filteredProducts = products?.filter((product) => {
@@ -35,6 +56,7 @@ function Shop() {
 
         return searchMatches && catagoryMatches
     });
+
     const sortedProducts = [...filteredProducts].sort((a, b) => {
         if (sort === "low") {
             return a.price - b.price
@@ -51,63 +73,120 @@ function Shop() {
 
 
     return (
-        <div className="min-h-screen bg-pink-50 px-6 py-10">
-            <h1 className="mb-8 text-3xl font-bold text-gray-800">
-                Shop
-            </h1>
-            <div >
-                <input type="text"
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    value={searchTerm}
-                    className="border " />
-                <select onChange={(e) => setCategory(e.target.value)}
-                    value={category} >
-                    <option value="all">All</option>
-                    <option value="babies">Babies</option>
-                    <option value="boys">Boys</option>
-                    <option value="girls">Girls</option>
-                </select>
-                <select onChange={(e) => setSort(e.target.value)} value={sort} >
-                    <option value="low">Low to High</option>
-                    <option value="high">High to Low </option>
-                </select>
+        <div className="min-h-screen bg-white text-black">
 
+            {/* Header */}
+            <div className="mx-auto max-w-7xl px-6 pb-10 pt-16">
+
+                <div className="flex flex-col justify-between gap-6 border-b border-black pb-8 md:flex-row md:items-end">
+                    <div>
+                        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gray-500">
+                            HAZEL
+                        </p>
+
+                        <h1 className="text-5xl font-light tracking-[0.15em]">
+                            SHOP
+                        </h1>
+                    </div>
+
+                    <p className="text-sm text-gray-500">
+                        Essentials for little ones
+                    </p>
+                </div>
+
+                {/* Filters */}
+                <div className="mt-8 grid gap-4 md:grid-cols-3">
+
+                    <input
+                        type="text"
+                        placeholder="Search products..."
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        value={searchTerm}
+                        className="border border-black bg-white px-4 py-3 text-sm outline-none placeholder:text-gray-400 focus:bg-black focus:text-white focus:placeholder:text-gray-400"
+                    />
+
+                    <select
+                        onChange={(e) => setCategory(e.target.value)}
+                        value={category}
+                        className="border border-black bg-white px-4 py-3 text-sm uppercase tracking-wider outline-none"
+                    >
+                        <option value="all">All</option>
+                        <option value="babies">Babies</option>
+                        <option value="boys">Boys</option>
+                        <option value="girls">Girls</option>
+                    </select>
+
+                    <select
+                        onChange={(e) => setSort(e.target.value)}
+                        value={sort}
+                        className="border border-black bg-white px-4 py-3 text-sm uppercase tracking-wider outline-none"
+                    >
+                        <option value="low">Low to High</option>
+                        <option value="high">High to Low </option>
+                    </select>
+
+                </div>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+
+            {/* Products */}
+            <div className="mx-auto max-w-7xl px-6 pb-20">
+
                 {filteredProducts.length === 0 ? (
-                    <p>No Products Found</p>
+                    <div className="border-y border-black py-16 text-center">
+                        <p className="text-sm uppercase tracking-[0.2em]">
+                            No Products Found
+                        </p>
+                    </div>
                 ) :
-                    (sortedProducts.map((product) => (
+                    (
+                        <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
-                        <div
-                            key={product.id}
-                            className="rounded-xl bg-white p-4 shadow-sm"
-                        ><Link to={`/product/${product.id}`} >
-                                <img
-                                    src={product.image}
-                                    alt={product.name}
-                                    width="200"
-                                    className="mb-4 w-full rounded-lg object-cover"
-                                />
+                            {sortedProducts.map((product) => (
 
-                                <h2 className="text-lg font-semibold text-gray-800">
-                                    {product.name}
-                                </h2>
+                                <div
+                                    key={product.id}
+                                    className="group"
+                                >
+                                    <Link to={`/product/${product.id}`}>
 
-                                <p className="mt-2 font-medium text-pink-600">
-                                    {product.price}
-                                </p>
+                                        <div className="overflow-hidden border border-black bg-white">
+                                            <img
+                                                src={product.image}
+                                                alt={product.name}
+                                                width="200"
+                                                className="h-80 w-full object-contain p-6 transition duration-500 group-hover:scale-105"
+                                            />
+                                        </div>
 
-                                <p className="mt-1 text-sm text-gray-500">
-                                    {product.category}
-                                </p>
-                            </Link>
+                                        <div className="mt-4">
+
+                                            <div className="flex items-start justify-between gap-4">
+                                                <h2 className="text-sm font-medium uppercase tracking-wider">
+                                                    {product.name}
+                                                </h2>
+
+                                                <p className="whitespace-nowrap text-sm">
+                                                    ₹{product.price}
+                                                </p>
+                                            </div>
+
+                                            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-gray-500">
+                                                {product.category}
+                                            </p>
+
+                                        </div>
+
+                                    </Link>
+                                </div>
+
+                            ))}
+
                         </div>
-
-
-                    )))}
+                    )}
 
             </div>
+
         </div>
     )
 }

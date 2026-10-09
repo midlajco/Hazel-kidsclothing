@@ -6,6 +6,7 @@ import Login from "./pages/Login"
 import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
 
+
 import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { login } from "./redux/authSlice"
@@ -34,6 +35,7 @@ function App() {
       <Route  path="/login" element ={<Login/>}  />
       <Route  path="/shop" element ={<Shop/>}  />
       <Route  path="/cart" element ={<Cart/>}  />
+      
       <Route  path="/product/:id" element ={<ProductPage/>}  />
       
      </Routes>
