@@ -112,6 +112,23 @@
       "id": "-VaM4A1xhF8"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "userId": "xx",
+      "items": [
+        {
+          "productId": "p7",
+          "name": "Little Cloud Bodysuit",
+          "price": 990,
+          "image": "/images/WhatsApp Image 2026-10-06 at 2.48.39 PM.jpeg",
+          "quantity": 1
+        }
+      ],
+      "total": 990,
+      "status": "pending",
+      "date": "2026-10-11T13:15:10.707Z",
+      "id": "npM5dLhSCaY"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

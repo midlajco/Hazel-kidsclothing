@@ -5,12 +5,14 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
+import Orders from "./pages/Orders"
 
 
 import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { login } from "./redux/authSlice"
 import ProductPage from "./pages/ProductPage"
+import CheckOut from "./pages/CheckOut"
 
 function App() {
 
@@ -35,6 +37,9 @@ function App() {
       <Route  path="/login" element ={<Login/>}  />
       <Route  path="/shop" element ={<Shop/>}  />
       <Route  path="/cart" element ={<Cart/>}  />
+      <Route  path="/checkout" element ={<CheckOut/>}  />
+      <Route  path="/orders" element ={<Orders/>}  />
+
       
       <Route  path="/product/:id" element ={<ProductPage/>}  />
       

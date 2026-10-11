@@ -114,11 +114,14 @@ function Cart() {
                         +
                     </button>
 
+                   {item.quantity >1 &&
                     <button
                         onClick={() => handleQ(item.productId, -1)}
                     >
                         -
                     </button>
+
+                   }
 
                     <button
                         onClick={() => handleRemove(item.productId)}
@@ -129,6 +132,7 @@ function Cart() {
             ))}
 
             <h1>TOTAl ={totalPrice}</h1>
+            <button onClick={()=>navigate("/checkout")} >checkout</button>
 
             <button onClick={() => handleEmptyCart()}>
                 Empty Cart
