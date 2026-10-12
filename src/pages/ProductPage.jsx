@@ -14,7 +14,8 @@ function ProductPage() {
 
     const Navigate = useNavigate()
     const dispatch = useDispatch()
-    const user = useSelector((state) => state.authentication.user)
+    const user = useSelector((state) => state.authentication.user);
+    
 
     const { id } = useParams();
     const { data: product, isLoading, isError } = useQuery({

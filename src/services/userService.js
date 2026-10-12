@@ -12,3 +12,9 @@ export async function getUserByEmail(email){
     const response =await axios.get(`${users}?email=${email}`)
     return response.data[0]
 }
+
+export async function getUserById(id) {
+    const response = await axios.get(`${users}/${id}`);
+    return response.data;
+}
+

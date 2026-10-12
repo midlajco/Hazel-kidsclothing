@@ -13,12 +13,15 @@ function Cart() {
     const navigate = useNavigate();
     const queryClient = useQueryClient();
 
+   
+     
+
     const user = useSelector(
         (state) => state.authentication.user
     );
 
     useEffect(() => {
-        const storedUser = localStorage.getItem("user");
+        const storedUser = localStorage.getItem("userId");
 
         if (!user && !storedUser) {
             navigate("/login");
@@ -50,6 +53,17 @@ function Cart() {
     if (isLoading) return <p>Loading cart...</p>;
 
     if (isError) return <p>Failed to load cart.</p>;
+
+    if (!cart) {
+    return (
+        <div>
+            <p>Your cart is empty.</p>
+            <button onClick={() => navigate("/shop")}>
+                Continue Shopping
+            </button>
+        </div>
+    );
+}
 
     const handleQ = (id, change) => {
         const updatediItems = cart.items.map((item) =>

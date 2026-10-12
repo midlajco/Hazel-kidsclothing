@@ -13,6 +13,7 @@ import { useEffect } from "react"
 import { login } from "./redux/authSlice"
 import ProductPage from "./pages/ProductPage"
 import CheckOut from "./pages/CheckOut"
+import { getUserById } from "./services/userService"
 
 function App() {
 
@@ -20,14 +21,23 @@ function App() {
   const dispatch =useDispatch();
   
 
-  useEffect(()=>{
-    const storedUser =localStorage.getItem("user");
+  useEffect(() => {
+  const restoreUser = async () => {
+    const userId = localStorage.getItem("userId");
 
-    if(storedUser){
-      const user =JSON.parse(storedUser);
-      dispatch(login(user))
+    if (userId) {
+      try {
+        const user = await getUserById(JSON.parse(userId));
+        dispatch(login(user));
+      } catch (error) {
+        console.error("Failed to restore user:", error);
+        localStorage.removeItem("userId");
+      }
     }
-  },[dispatch])
+  };
+
+  restoreUser();
+}, [dispatch]);
 
   return (
     <BrowserRouter>

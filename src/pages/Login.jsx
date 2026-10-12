@@ -54,7 +54,7 @@ function Login() {
         }
 
         dispatch(login(user));
-        localStorage.setItem("user", JSON.stringify(user.id))
+        localStorage.setItem("userId", JSON.stringify(user.id))
         navigate("/")
     }
 

@@ -9,7 +9,8 @@ function Shop() {
     const [searchTerm, setSearchTerm] = useState("");
     const [category, setCategory] = useState("all");
     const [sort, setSort] = useState("low");
-
+    
+    
 
 
 
