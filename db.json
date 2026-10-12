@@ -8,97 +8,291 @@
     }
   ],
   "products": [
+    
     {
-      "id": "p1",
-      "name": "Soft Cotton Romper",
-      "category": "babies",
-      "price": 1290,
-      "description": "Soft cotton romper made for everyday comfort.",
-      "image": "public/images/jisn.png",
+      "id": 1,
+      "name": "Forest Fleece Pullover",
+      "price": 1490,
+      "category": "boys",
+      "image": "/images/products/forest-fleece-pullover.webp",
+      "stock": 18
+    },
+    {
+      "id": 2,
+      "name": "Midnight Cable Knit Sweater",
+      "price": 1690,
+      "category": "boys",
+      "image": "/images/products/midnight-cable-knit-sweater.webp",
       "stock": 12
     },
     {
-      "id": "p2",
-      "name": "Everyday Baby Set",
+      "id": 3,
+      "name": "Colourblock Teddy Jacket",
+      "price": 1890,
       "category": "babies",
-      "price": 1590,
-      "description": "Comfortable two-piece set for little ones.",
-      "image": "public/images/munawir.jpeg",
-      "stock": 8
-    },
-    {
-      "id": "p3",
-      "name": "Classic Cotton Dress",
-      "category": "girls",
-      "price": 2190,
-      "description": "Simple cotton dress for everyday wear.",
-      "image": "public/images/shahanan.jpeg",
+      "image": "/images/products/colourblock-teddy-jacket.webp",
       "stock": 10
     },
     {
-      "id": "p4",
-      "name": "Linen Summer Dress",
-      "category": "girls",
-      "price": 2490,
-      "description": "Lightweight linen dress with a comfortable fit.",
-      "image": "public/images/siarj.jpeg",
-      "stock": 6
-    },
-    {
-      "id": "p5",
-      "name": "Relaxed Cotton Shirt",
+      "id": 4,
+      "name": "Burgundy Corduroy Overshirt",
+      "price": 1590,
       "category": "boys",
-      "price": 1890,
-      "description": "Relaxed cotton shirt for everyday adventures.",
-      "image": "public/images/WhatsApp Image 2026-10-06 at 2.48.28 PM.jpeg",
-      "stock": 7
-    },
-    {
-      "id": "p6",
-      "name": "Everyday Shorts",
-      "category": "boys",
-      "price": 1290,
-      "description": "Lightweight shorts designed for everyday play.",
-      "image": "/images/WhatsApp Image 2026-10-06 at 2.48.29 PM.jpeg",
+      "image": "/images/products/burgundy-corduroy-overshirt.webp",
       "stock": 14
     },
     {
-      "id": "p7",
-      "name": "Little Cloud Bodysuit",
+      "id": 5,
+      "name": "Little Gentleman Suspender Set",
+      "price": 1790,
       "category": "babies",
+      "image": "/images/products/little-gentleman-suspender-set.webp",
+      "stock": 8
+    },
+    {
+      "id": 6,
+      "name": "Burgundy Everyday Co-ord Set",
+      "price": 1290,
+      "category": "boys",
+      "image": "/images/products/burgundy-everyday-coord-set.webp",
+      "stock": 16
+    },
+    {
+      "id": 7,
+      "name": "Navy Everyday Joggers",
       "price": 990,
-      "description": "Soft and gentle bodysuit for everyday comfort.",
-      "image": "/images/WhatsApp Image 2026-10-06 at 2.48.39 PM.jpeg",
+      "category": "boys",
+      "image": "/images/products/navy-everyday-joggers.webp",
+      "stock": 20
+    },
+    {
+      "id": 8,
+      "name": "Chocolate Stripe Long-Sleeve Tee",
+      "price": 890,
+      "category": "boys",
+      "image": "/images/products/chocolate-stripe-long-sleeve-tee.webp",
+      "stock": 22
+    },
+    {
+      "id": 9,
+      "name": "Forest Stripe Sweatshirt",
+      "price": 1290,
+      "category": "boys",
+      "image": "/images/products/forest-stripe-sweatshirt.webp",
       "stock": 15
     },
     {
-      "id": "p8",
-      "name": "Weekend Play Set",
+      "id": 10,
+      "name": "Little Astronaut Sweatshirt",
+      "price": 1390,
       "category": "boys",
-      "price": 2290,
-      "description": "Comfortable matching set for relaxed weekends.",
-      "image": "/images/products/play-set.jpg",
-      "stock": 5
-    },
-    {
-      "id": "p9",
-      "name": "Petal Cotton Top",
-      "category": "girls",
-      "price": 1490,
-      "description": "Soft cotton top with a simple everyday design.",
-      "image": "/images/products/cotton-top.jpg",
+      "image": "/images/products/little-astronaut-sweatshirt.webp",
       "stock": 11
     },
     {
-      "id": "p10",
-      "name": "Fine Knit Cardigan",
+      "id": 11,
+      "name": "Vintage Floral Romper",
+      "price": 1290,
+      "category": "girls",
+      "image": "/images/products/vintage-floral-romper.webp",
+      "stock": 14
+    },
+    {
+      "id": 12,
+      "name": "Rose Garden Floral Blouse",
+      "price": 1190,
+      "category": "girls",
+      "image": "/images/products/rose-garden-floral-blouse.webp",
+      "stock": 16
+    },
+    {
+      "id":13,
+      "name": "Leopard Corduroy Skirt",
+      "price": 1090,
+      "category": "girls",
+      "image": "/images/products/leopard-corduroy-skirt.webp",
+      "stock": 11
+    },
+    {
+      "id": 14,
+      "name": "Ivory Textured Knit Cardigan",
+      "price": 1490,
+      "category": "girls",
+      "image": "/images/products/ivory-textured-knit-cardigan.webp",
+      "stock": 13
+    },
+    {
+      "id": 15,
+      "name": "Ivory Embroidered Playsuit",
+      "price": 1390,
       "category": "babies",
-      "price": 1790,
-      "description": "Lightweight knitted cardigan for cooler days.",
-      "image": "/images/products/cardigan.jpg",
+      "image": "/images/products/ivory-embroidered-playsuit.webp",
       "stock": 9
+    },
+    {
+      "id": 16,
+      "name": "Burgundy Corduroy Trousers",
+      "price": 1290,
+      "category": "girls",
+      "image": "/images/products/burgundy-corduroy-trousers.webp",
+      "stock": 18
+    },
+    {
+      "id": 17,
+      "name": "Ditsy Floral Wide-Leg Trousers",
+      "price": 1190,
+      "category": "girls",
+      "image": "/images/products/ditsy-floral-wide-leg-trousers.webp",
+      "stock": 12
+    },
+    {
+      "id": 18,
+      "name": "Pink Heart Ribbed Sweater",
+      "price": 1090,
+      "category": "girls",
+      "image": "/images/products/pink-heart-ribbed-sweater.webp",
+      "stock": 15
+    },
+    {
+      "id": 19,
+      "name": "Cherry Red Fuzzy Cardigan",
+      "price": 1590,
+      "category": "girls",
+      "image": "/images/products/cherry-red-fuzzy-cardigan.webp",
+      "stock": 8
+    },
+    {
+      "id": 20,
+      "name": "Burgundy Velvet Bow Dress",
+      "price": 1990,
+      "category": "girls",
+      "image": "/images/products/burgundy-velvet-bow-dress.webp",
+      "stock": 7
+    },
+    {
+      "id": 21,
+      "name": "Ivory Fluffy Button Cardigan",
+      "price": 1490,
+      "category": "girls",
+      "image": "/images/products/ivory-fluffy-button-cardigan.webp",
+      "stock": 10
+    },
+    {
+      "id": 22,
+      "name": "Blush Pink Corduroy Pinafore",
+      "price": 1290,
+      "category": "girls",
+      "image": "/images/products/blush-pink-corduroy-pinafore.webp",
+      "stock": 12
+    },
+    {
+      "id": 23,
+      "name": "Tartan Collar Long-Sleeve Dress",
+      "price": 1690,
+      "category": "girls",
+      "image": "/images/products/tartan-collar-long-sleeve-dress.webp",
+      "stock": 9
+    },
+    {
+      "id": 24,
+      "name": "Burgundy Ruffle Party Dress",
+      "price": 2290,
+      "category": "girls",
+      "image": "/images/products/burgundy-ruffle-party-dress.webp",
+      "stock": 5
+    },
+    {
+      "id": 25,
+      "name": "Black Tulle Skirt Dress",
+      "price": 1790,
+      "category": "girls",
+      "image": "/images/products/black-tulle-skirt-dress.webp",
+      "stock": 8
+    },
+     {
+      "id": 26,
+      "name": "Cream Teddy Hooded Fleece Jacket",
+      "price": 1790,
+      "category": "babies",
+      "image": "/images/products/cream-teddy-hooded-fleece-jacket.webp",
+      "stock": 18
+    },
+    {
+      "id": 27,
+      "name": "White Bear Face Onesie Set",
+      "price": 1290,
+      "category": "babies",
+      "image": "/images/products/white-bear-face-baby-onesie-set.webp",
+      "stock": 20
+    },
+    {
+      "id": 28,
+      "name": "Oatmeal Knit Button Cardigan",
+      "price": 1490,
+      "category": "babies",
+      "image": "/images/products/oatmeal-knit-button-cardigan.webp",
+      "stock": 14
+    },
+    {
+      "id": 29,
+      "name": "Navy and Grey Stripe Joggers Set",
+      "price": 1190,
+      "category": "babies",
+      "image": "/images/products/navy-grey-striped-baby-joggers.webp",
+      "stock": 16
+    },
+    {
+      "id": 30,
+      "name": "Cream Bear Ear Knit Hat",
+      "price": 690,
+      "category": "babies",
+      "image": "/images/products/cream-bear-ear-knit-baby-hat.webp",
+      "stock": 22
+    },
+    {
+      "id": 31,
+      "name": "Ivory Pink Heart Fleece Set",
+      "price": 1590,
+      "category": "babies",
+      "image": "/images/products/ivory-pink-heart-fleece-set.webp",
+      "stock": 12
+    },
+    {
+      "id": 32,
+      "name": "Chocolate Brown Fleece Tracksuit",
+      "price": 1690,
+      "category": "babies",
+      "image": "/images/products/chocolate-brown-fleece-tracksuit.webp",
+      "stock": 10
+    },
+    {
+      "id": 33,
+      "name": "Ivory and Taupe Bear Ear Beanies",
+      "price": 790,
+      "category": "babies",
+      "image": "/images/products/ivory-taupe-bear-ear-beanies.webp",
+      "stock": 15
+    },
+    {
+      "id": 34,
+      "name": "Burgundy Floral Baby Bodysuit",
+      "price": 990,
+      "category": "babies",
+      "image": "/images/products/burgundy-floral-baby-bodysuit.webp",
+      "stock": 17
+    },
+    {
+      "id": 35,
+      "name": "Three-Piece Baby Bodysuit Set",
+      "price": 1390,
+      "category": "babies",
+      "image": "/images/products/three-piece-baby-bodysuit-set.webp",
+      "stock": 19
     }
-  ],
+
+  ]
+
+  ,
   "cart": [
     {
       "userId": "_fywHjhp8NM",
