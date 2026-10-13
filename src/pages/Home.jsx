@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
-import HomeNavbar from "./components/home/HomeNavbar"
-import HeroBanner from "./components/home/HeroBanner"
-import NewArrivals from "./components/home/newArrival"
-import CatagorySection from "./components/home/CatagorySection"
+import HomeNavbar from "../components/home/HomeNavbar"
+import HeroBanner from "../components/home/HeroBanner"
+import NewArrivals from "../components/home/newArrival"
+import CatagorySection from "../components/home/CatagorySection"
+import Footer from "../components/home/Footer"
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
     </main>
     <NewArrivals/>
     <CatagorySection/>
+    <Footer/>
    </> 
   )
 }
